@@ -1,0 +1,10 @@
+# Xenocs GeniX3D X-ray generator: READ-ONLY status over Modbus/TCP (xeuss_bliss/genix.py; manual MP-GeniX3D 7.6).
+# In the session since 2026-10-23 (sessions/xeuss.yml config-objects); first read OK
+# (script 30: eth1 gets 85.16.44.110/16; generator cable on the detector-network switch).
+- name: genix
+  plugin: bliss
+  class: GeniX3D
+  package: xeuss_bliss.genix
+  host: 85.16.44.113
+  port: 502
+  unit: 1

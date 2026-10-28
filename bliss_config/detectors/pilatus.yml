@@ -1,0 +1,32 @@
+# PILATUS3 detectors (SAXS 300K, WAXS 100K) via camserver (no Lima), see ~/bliss/local/xeuss_bliss/xeuss_bliss/pilatus_camserver.py
+# camserver must be running on the detector PC (launchers Dectris0 / Dectris1). BLISS mode only.
+# EDF files stay where camserver writes them; images are also stored in the BLISS NeXus file (/data_local/bliss).
+- name: pilatus_saxs    # PILATUS3 300K (S/N 3-0232), 487 x 619
+  plugin: bliss
+  class: PilatusCamserver
+  package: xeuss_bliss.pilatus_camserver
+  host: 192.168.0.100
+  counter_prefix: saxs
+  delete_edf_after_read: true   # EDF only temporary; image kept in the BLISS NeXus file (/data_local/bliss)
+  rois:                          # ROI counters saxs_<name>: [x, y, width, height] (Lima convention, pixels)
+    # 2026-10-21: both moved up 5 rows (beam centre measured at row 585.4, col 8.2 with take_direct_beam)
+    direct: [4, 580, 10, 11]     # direct beam;         columns 4..13, rows 580..590 (SPEC set_roi_direct: 585..595)
+    spec: [4, 573, 10, 6]        # specular reflection; columns 4..13, rows 573..578 (SPEC set_roi_spec:   578..583)
+  port: 41234
+  local_dir: /data/images
+  host_dir: /data0/images
+  subdir: inhouse/bliss
+  rows: 619
+  columns: 487
+- name: pilatus_waxs
+  plugin: bliss
+  class: PilatusCamserver
+  package: xeuss_bliss.pilatus_camserver
+  host: 192.168.0.101
+  counter_prefix: waxs
+  port: 41234
+  local_dir: /data/images
+  host_dir: /data1/images
+  subdir: inhouse/bliss
+  rows: 195            # PILATUS3 100K-20Hz (S/N 1-0504-20Hz), 487 x 195
+  columns: 487

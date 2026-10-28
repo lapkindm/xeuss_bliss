@@ -1,0 +1,5 @@
+# Xeuss 2.0 BLISS session (BLISS mode only; SPEC owns the hardware in SPEC mode)
+- class: Session
+  name: xeuss
+  setup-file: ./xeuss_setup.py
+  config-objects: [sim_diode, sim_mot, ni, mg_xeuss, shutter, s1bot, s1top, s1hl, s1hr, s2bot, s2top, s2hl, s2hr, fil, om, bsx, bsz, detx, detz, x, z, s1vg, s1vo, s1hg, s1ho, s2vg, s2vo, s2hg, s2ho, pilatus_saxs, pilatus_waxs, genix]

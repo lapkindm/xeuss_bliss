@@ -1,0 +1,24 @@
+# NI PCIe-6320 counters (SPEC CNT000/CNT002: sec, det). BLISS mode only.
+# Code: ~/bliss/local/xeuss_bliss/xeuss_bliss/ni63xx.py (DIO lines: shutter/heating NOT handled here)
+- name: ni
+  plugin: bliss
+  class: NI63xx
+  package: xeuss_bliss.ni63xx
+  device: Dev1
+  gate_counter: ctr0
+  counters:
+    - counter_name: sec
+      channel: timer
+      unit: s
+    - counter_name: det
+      channel: ctr2
+    # removed 2026-10-20: mon (ctr1, pin 42; cable not connected at the other end) and
+    # shu (ctr3, pin 6; always 0, purpose unknown). To restore, add e.g.:
+    #   - counter_name: mon
+    #     channel: ctr1
+- name: mg_xeuss
+  plugin: session
+  class: MeasurementGroup
+  # default counters for sct/scans: NI counters + SAXS PILATUS image (camserver must run: Dectris0).
+  # All motor positions are saved by BLISS at scan start/end (positioners), the scanned motor at every point.
+  counters: [ni, pilatus_saxs]

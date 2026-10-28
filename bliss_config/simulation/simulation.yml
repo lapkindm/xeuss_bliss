@@ -1,0 +1,14 @@
+# Simulated objects to test the BLISS chain (no hardware)
+- name: sim_diode
+  plugin: bliss
+  class: simulation_diode
+- controller:
+    class: mockup
+    plugin: emotion
+    axes:
+      - name: sim_mot
+        steps_per_unit: 100
+        velocity: 1
+        acceleration: 1
+        low_limit: -10
+        high_limit: 10

@@ -1,0 +1,223 @@
+# MDrive motors of the Xeuss 2.0, generated 2026-10-20 from SPEC's config and settings
+# (/usr/local/lib/spec.d/saxs/config, settings decoded by ~/bliss/local/spec_reference/read_spec_settings.py).
+# Not connected now, so not configured: rx (R), ry (S), phi (T).
+# read_only: false since 2026-10-20 (set true to block all moves again). detz: known hardware problem, may not physically move.
+# Limits are DIAL limits (as SPEC). velocity = SPEC slew/steps, acceleration = velocity/(SPEC accel ms).
+# Offsets are not YAML settings: set once from SPEC (see HANDOFF), stored by BLISS in Redis.
+- controller:
+    class: MDrive
+    package: xeuss_bliss.mdrive
+    plugin: emotion
+    serial:
+      url: /dev/ttyUSB0
+      baudrate: 9600
+    read_only: false   # moves enabled 2026-10-20 after tests (s1bot, detz comms, x direction confirmed by user)
+    axes:
+      - name: s1bot
+        device_name: A
+        steps_per_unit: 102400
+        sign: 1
+        velocity: 0.75
+        acceleration: 6
+        low_limit: -11
+        high_limit: 11
+        unit: mm
+        # SPEC: base rate 100 steps/s, backlash -12800 steps, user offset 0.351641
+        base_rate: 100
+        backlash: -0.125
+        backlash_is_dial: true
+      - name: s1top
+        device_name: B
+        steps_per_unit: 102400
+        sign: -1
+        velocity: 0.75
+        acceleration: 6
+        low_limit: -11
+        high_limit: 11
+        unit: mm
+        # SPEC: base rate 100 steps/s, backlash 12800 steps, user offset -0.397158
+        base_rate: 100
+        backlash: 0.125
+        backlash_is_dial: true
+      - name: s1hl
+        device_name: C
+        steps_per_unit: 102400
+        sign: -1
+        velocity: 0.75
+        acceleration: 6
+        low_limit: -11
+        high_limit: 11
+        unit: mm
+        # SPEC: base rate 100 steps/s, backlash 12800 steps, user offset -0.912129
+        base_rate: 100
+        backlash: 0.125
+        backlash_is_dial: true
+      - name: s1hr
+        device_name: D
+        steps_per_unit: 102400
+        sign: 1
+        velocity: 0.75
+        acceleration: 6
+        low_limit: -11
+        high_limit: 11
+        unit: mm
+        # SPEC: base rate 100 steps/s, backlash -12800 steps, user offset 1.61611
+        base_rate: 100
+        backlash: -0.125
+        backlash_is_dial: true
+      - name: s2bot
+        device_name: E
+        steps_per_unit: 102400
+        sign: 1
+        velocity: 0.75
+        acceleration: 6
+        low_limit: -11
+        high_limit: 11
+        unit: mm
+        # SPEC: base rate 100 steps/s, backlash -12800 steps, user offset 0.229853
+        base_rate: 100
+        backlash: -0.125
+        backlash_is_dial: true
+      - name: s2top
+        device_name: F
+        steps_per_unit: 102400
+        sign: -1
+        velocity: 0.75
+        acceleration: 6
+        low_limit: -11
+        high_limit: 11
+        unit: mm
+        # SPEC: base rate 100 steps/s, backlash 12800 steps, user offset 0.280039
+        base_rate: 100
+        backlash: 0.125
+        backlash_is_dial: true
+      - name: s2hl
+        device_name: G
+        steps_per_unit: 102400
+        sign: -1
+        velocity: 0.75
+        acceleration: 6
+        low_limit: -11
+        high_limit: 11
+        unit: mm
+        # SPEC: base rate 100 steps/s, backlash 12800 steps, user offset -0.0331055
+        base_rate: 100
+        backlash: 0.125
+        backlash_is_dial: true
+      - name: s2hr
+        device_name: H
+        steps_per_unit: 102400
+        sign: 1
+        velocity: 0.75
+        acceleration: 6
+        low_limit: -11
+        high_limit: 11
+        unit: mm
+        # SPEC: base rate 100 steps/s, backlash -12800 steps, user offset 0.526455
+        base_rate: 100
+        backlash: -0.125
+        backlash_is_dial: true
+      - name: fil
+        device_name: K
+        steps_per_unit: 7111
+        sign: 1
+        velocity: 14.0627
+        acceleration: 112.502
+        low_limit: -29.8234
+        high_limit: 13.0225
+        unit: mm
+        # SPEC: base rate 100 steps/s, backlash 0 steps, user offset 20.3233
+        base_rate: 100
+        backlash: 0
+        backlash_is_dial: true
+      - name: om
+        device_name: O
+        steps_per_unit: 61020
+        sign: 1
+        velocity: 0.491642
+        acceleration: 3.93314
+        low_limit: -6.04389
+        high_limit: 4.95611
+        unit: deg
+        # SPEC: base rate 100 steps/s, backlash 20000 steps, user offset 0.543887
+        base_rate: 100
+        backlash: 0.32776139
+        backlash_is_dial: true
+      - name: bsx
+        device_name: P
+        steps_per_unit: 64000
+        sign: 1
+        velocity: 1.2
+        acceleration: 9.6
+        low_limit: -38.6261
+        high_limit: 31.3739
+        unit: mm
+        # SPEC: base rate 100 steps/s, backlash 51200 steps, user offset -2.52155
+        base_rate: 100
+        backlash: 0.8
+        backlash_is_dial: true
+      - name: bsz
+        device_name: Q
+        steps_per_unit: 64000
+        sign: 1
+        velocity: 1.2
+        acceleration: 9.6
+        low_limit: -45.9301
+        high_limit: 83.0699
+        unit: mm
+        # SPEC: base rate 100 steps/s, backlash 51200 steps, user offset -37.213
+        base_rate: 100
+        backlash: 0.8
+        backlash_is_dial: true
+      - name: detx
+        device_name: U
+        steps_per_unit: 51200
+        sign: -1
+        velocity: 1.5
+        acceleration: 12
+        low_limit: -110
+        high_limit: 110
+        unit: mm
+        # SPEC: base rate 200 steps/s, backlash 25600 steps, user offset 0
+        base_rate: 200
+        backlash: 0.5
+        backlash_is_dial: true
+      - name: detz
+        device_name: V
+        steps_per_unit: 51200
+        sign: -1
+        velocity: 1.5
+        acceleration: 12
+        low_limit: -232
+        high_limit: 0
+        unit: mm
+        # SPEC: base rate 200 steps/s, backlash -25600 steps, user offset 48
+        base_rate: 200
+        backlash: -0.5
+        backlash_is_dial: true
+      - name: x
+        device_name: X
+        steps_per_unit: 40315
+        sign: -1
+        velocity: 2
+        acceleration: 16
+        low_limit: -18
+        high_limit: 23
+        unit: mm
+        # SPEC: base rate 100 steps/s, backlash -25100 steps, user offset 8.64415
+        base_rate: 100
+        backlash: -0.62259705
+        backlash_is_dial: true
+      - name: z
+        device_name: Z
+        steps_per_unit: 51200
+        sign: -1
+        velocity: 0.625
+        acceleration: 3.57143
+        low_limit: -24
+        high_limit: 0
+        unit: mm
+        # SPEC: base rate 100 steps/s, backlash -51200 steps, user offset -16
+        base_rate: 100
+        backlash: -1
+        backlash_is_dial: true

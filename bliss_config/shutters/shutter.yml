@@ -1,0 +1,7 @@
+# X-ray shutter on NI PCIe-6320 port0/line7 (high = open), as SPEC shutter_NI63.mac. BLISS mode only.
+# Closed when the session starts. Code: ~/bliss/local/xeuss_bliss/xeuss_bliss/ni_shutter.py
+- name: shutter
+  plugin: bliss
+  class: NIShutter
+  package: xeuss_bliss.ni_shutter
+  line: Dev1/port0/line7

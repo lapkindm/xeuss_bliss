@@ -1,0 +1,56 @@
+# Slit gap/offset pseudo-motors on top of the 8 MDrive blades (motors/mdrive.yml).
+# Blade positions are distances from the beam centre, positive = open (Xenocs/SPEC convention, as BLISS's
+# slits controller): gap = top + bot, offset = (top - bot)/2; horizontal: front = hr, back = hl.
+# Same values as SPEC's wss / s1go / ns1go. Commands: s1go, s2go, ws, alignslit (xeuss_bliss/slits.py).
+- controller:
+    name: slit1
+    class: slits
+    plugin: emotion
+    slit_type: both
+    axes:
+      - name: $s1top
+        tags: real up
+      - name: $s1bot
+        tags: real down
+      - name: $s1hr
+        tags: real front
+      - name: $s1hl
+        tags: real back
+      - name: s1vg
+        tags: vgap
+        unit: mm
+      - name: s1vo
+        tags: voffset
+        unit: mm
+      - name: s1hg
+        tags: hgap
+        unit: mm
+      - name: s1ho
+        tags: hoffset
+        unit: mm
+- controller:
+    name: slit2
+    class: slits
+    plugin: emotion
+    slit_type: both
+    axes:
+      - name: $s2top
+        tags: real up
+      - name: $s2bot
+        tags: real down
+      - name: $s2hr
+        tags: real front
+      - name: $s2hl
+        tags: real back
+      - name: s2vg
+        tags: vgap
+        unit: mm
+      - name: s2vo
+        tags: voffset
+        unit: mm
+      - name: s2hg
+        tags: hgap
+        unit: mm
+      - name: s2ho
+        tags: hoffset
+        unit: mm

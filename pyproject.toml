@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xeuss-bliss"
+version = "0.1.0"
+description = "BLISS controllers for the Xenocs Xeuss 2.0 at xeuss20 (NI PCIe-6320 counters, later MDrive motors)"
+requires-python = ">=3.10"
+
+[tool.setuptools]
+packages = ["xeuss_bliss"]
