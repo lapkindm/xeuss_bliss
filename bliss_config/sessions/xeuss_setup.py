@@ -28,6 +28,8 @@ import xeuss_bliss.notify
 # every error e-mail of notifying(...) also goes to the person responsible for the instrument
 # (mail goes by SMTP to the local Postfix, see xeuss_bliss/notify.py)
 xeuss_bliss.notify.ERRORS_ALWAYS_TO = "responsible@example.org"  # set on xeuss20
+# sender <user>@MAIL_DOMAIN: Postfix myhostname/myorigin (xeuss20 itself only knows its short name)
+xeuss_bliss.notify.MAIL_DOMAIN = "host.example.org"  # set on xeuss20
 
 
 # X-ray source, written into every scan (NeXus: instrument/source). Cu tube WITHOUT monochromator:
